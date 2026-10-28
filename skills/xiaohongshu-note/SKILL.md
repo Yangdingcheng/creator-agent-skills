@@ -1,6 +1,6 @@
 ---
 name: xiaohongshu-note
-description: Turn a topic, draft or article into a Xiaohongshu (小红书) note package: title options, body text in native Xiaohongshu style, a card-by-card image text plan (3:4), and hashtags. Use when the user wants to publish or adapt content on Xiaohongshu.
+description: Turn a topic, draft or article into a Xiaohongshu (小红书) note package with title options, body text in native Xiaohongshu style, a card-by-card image text plan (3:4), and hashtags. Use when the user wants to publish or adapt content on Xiaohongshu.
 ---
 
 # Xiaohongshu Note
