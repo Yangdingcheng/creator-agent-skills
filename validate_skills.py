@@ -16,6 +16,19 @@ def check(path):
     if not name: errs.append(f"{path}: no name in frontmatter")
     elif name.group(1) != folder: errs.append(f"{path}: name '{name.group(1)}' != folder '{folder}'")
     if not desc or len(desc.group(1)) < 40: errs.append(f"{path}: description missing or too short")
+    # YAML trap: an unquoted plain scalar containing ': ' breaks strict parsers (incl. GitHub's preview)
+    for key in ("name", "description"):
+        km = re.search(rf"^{key}:\s*(.+)$", fm, re.M)
+        if km and not km.group(1).startswith(('"', "'")) and ": " in km.group(1):
+            errs.append(f"{path}: unquoted ': ' in {key} breaks YAML parsing — rephrase or quote the value")
+    try:  # when PyYAML is available, parse for real
+        import yaml
+        data = yaml.safe_load(fm)
+        if not isinstance(data, dict) or "name" not in data: errs.append(f"{path}: frontmatter does not parse as a mapping")
+    except ImportError:
+        pass
+    except Exception as e:  # yaml.YAMLError and friends
+        errs.append(f"{path}: YAML parse failed: {e}")
     body = text[m.end():]
     if len(body) < 600: errs.append(f"{path}: body too short ({len(body)} chars) — a skill needs a real workflow")
     return errs
