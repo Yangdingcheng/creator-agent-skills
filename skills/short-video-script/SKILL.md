@@ -1,6 +1,6 @@
 ---
 name: short-video-script
-description: Write a 30–90 second short-video script (Douyin / 视频号 / Bilibili / Reels) from a topic or article: hook line, timed segments, on-screen text and cover text. Use when the user wants to turn content into a short video.
+description: Write a 30–90 second short-video script (Douyin / 视频号 / Bilibili / Reels) from a topic or article, with hook line, timed segments, on-screen text and cover text. Use when the user wants to turn content into a short video.
 ---
 
 # Short Video Script
