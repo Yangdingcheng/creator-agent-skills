@@ -1,6 +1,6 @@
 ---
 name: daily-news-brief
-description: Build today's international news topic list for a daily news creator: scan the day's major events, rank them by reader impact, and produce candidate topics with verified fact points and source leads. Use for daily news planning, morning topic selection, or "what happened today" briefings.
+description: Build today's international news topic list for a daily news creator. Scan the day's major events, rank them by reader impact, and produce candidate topics with verified fact points and source leads. Use for daily news planning, morning topic selection, or daily briefings.
 ---
 
 # Daily News Brief
